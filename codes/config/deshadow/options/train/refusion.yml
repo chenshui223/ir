@@ -25,22 +25,22 @@ datasets:
     optimizer: Lion # Adam, AdamW, Lion
     name: Train_Dataset
     mode: LQGT
-    dataroot_GT: /home/ziwlu/datasets/ntire2023/shadow/train/GT
-    dataroot_LQ: /home/ziwlu/datasets/ntire2023/shadow/train/LQ
+    dataroot_GT: /kaggle/input/p128full/pfull/pfulltrain/caijian
+    dataroot_LQ: /kaggle/input/p128full/p128train/caijian
 
     use_shuffle: true
     n_workers: 4  # per GPU
     batch_size: 4
-    GT_size: 128
-    LR_size: 128
+    GT_size: 256
+    LR_size: 256
     use_flip: true
     use_rot: true
     color: RGB
   val:
     name: Val_Dataset
     mode: LQGT
-    dataroot_GT: /home/ziwlu/datasets/ntire2023/shadow/val/GT
-    dataroot_LQ: /home/ziwlu/datasets/ntire2023/shadow/val/LQ
+    dataroot_GT: /kaggle/input/p128full/pfull/pfulltest/caijian
+    dataroot_LQ: /kaggle/input/p128full/p128test/caijian
 
 
 #### network structures
@@ -54,7 +54,7 @@ network_G:
 
 #### path
 path:
-  pretrain_model_G: ~
+  pretrain_model_G: /kaggle/input/pthdeshadow/reffusion-deshadow.pth
   strict_load: true
   resume_state: ~
 
